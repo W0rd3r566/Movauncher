@@ -1,217 +1,32 @@
-# ARK-Launcher
+# Movauncher
 
-[![Latest release](https://img.shields.io/github/v/release/jrs8205/ARK-launcher?sort=semver)](https://github.com/jrs8205/ARK-launcher/releases/latest)
-[![F-Droid](https://img.shields.io/f-droid/v/org.arkikeskus.launcher)](https://f-droid.org/packages/org.arkikeskus.launcher/)
-[![Aptoide](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fws75.aptoide.com%2Fapi%2F7%2Fapp%2FgetMeta%3Fpackage_name%3Dorg.arkikeskus.launcher&query=%24.data.file.vername&label=Aptoide&prefix=v)](https://ark-launcher.en.aptoide.com/app)
-[![APKPure](https://img.shields.io/badge/APKPure-available-blue)](https://apkpure.com/p/org.arkikeskus.launcher)
-[![SourceForge](https://img.shields.io/badge/SourceForge-mirror-blue)](https://sourceforge.net/projects/ark-launcher/)
-[![License: Apache-2.0](https://img.shields.io/github/license/jrs8205/ARK-launcher)](LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/jrs8205/ARK-launcher/total)](https://github.com/jrs8205/ARK-launcher/releases)
-[![Built with Jetpack Compose](https://img.shields.io/badge/Built%20with-Jetpack%20Compose-4285F4)](https://developer.android.com/jetpack/compose)
+A minimal Android launcher with extensive customization, based on [ARK Launcher](https://github.com/jrs8205/ARK-launcher).
 
-A modern, lightweight Android home-screen launcher built entirely with **Jetpack Compose**.
-It speaks **English, Finnish, German, Spanish, French, Polish, Portuguese, Russian, Swedish and Turkish**
-(English is the fallback) and shares the visual identity of the
-**Arkikeskus** app, but works as a standalone launcher for anyone.
+**0.1.0 — foundation in progress**. This is an independent, experimental fork maintained by [W0rd3r566](https://github.com/W0rd3r566), not affiliated with the original project.
 
-> Status: early but daily-driven. Built from scratch on a current Kotlin/Compose stack.
+## First milestone
 
-📖 **New here?** The **[Wiki](https://github.com/jrs8205/ARK-launcher/wiki)** has the full user guide —
-[setup](https://github.com/jrs8205/ARK-launcher/wiki/Getting-Started),
-[features](https://github.com/jrs8205/ARK-launcher/wiki/Features),
-[icon packs](https://github.com/jrs8205/ARK-launcher/wiki/Icon-Packs),
-[backup](https://github.com/jrs8205/ARK-launcher/wiki/Backup-and-Restore) and a
-[FAQ](https://github.com/jrs8205/ARK-launcher/wiki/FAQ).
+- Android app ID `com.movauncher.launcher` (installs alongside ARK Launcher).
+- Independent app name, adaptive icon and version number.
+- Graphite and Mint palette choices, keeping the rest of the upstream options.
+- Automated debug APK build in GitHub Actions.
 
-## Screenshots
+Movauncher Studio's freeform visual layout editing, mixable design systems, animation settings and theme-profile sharing are **planned** and not yet implemented.
 
-<p align="center">
-  <img src="docs/screenshots/home.png" width="24%" alt="Home screen with a widget" />
-  <img src="docs/screenshots/drawer.png" width="24%" alt="App drawer with search" />
-  <img src="docs/screenshots/widgets.png" width="24%" alt="Widget picker with search" />
-  <img src="docs/screenshots/settings.png" width="24%" alt="Settings" />
-</p>
+## Development
 
-## Download
+Built with Kotlin and Jetpack Compose. Android 11 (API 30) or later.
 
-Download the latest signed APK from the
-[**Releases**](https://github.com/jrs8205/ARK-launcher/releases/latest) page and open it on
-your device to install. To update, install the newer APK from the same page (Settings ▸ About and feedback ▸
-"Check for updates" opens it), or let Obtainium do it for you (below). Every release is also
-mirrored on [**SourceForge**](https://sourceforge.net/projects/ark-launcher/).
-
-ARK-Launcher is also on [**F-Droid**](https://f-droid.org/packages/org.arkikeskus.launcher/).
-F-Droid builds it from source and ships the same signed APK as GitHub, so you can switch between
-them without reinstalling. New versions reach F-Droid a few days after GitHub.
-
-Requires **Android 11 (API 30)** or newer.
-
-**Registered with Google.** The package name and signing key are registered in Google's Android
-Developer Console, so the app keeps installing as usual under Google's new [sideloading
-rules](https://developer.android.com/developer-verification).
-
-### Auto-updates with Obtainium
-
-Prefer an app-store-style experience with automatic updates? Install
-[**Obtainium**](https://github.com/ImranR98/Obtainium) and add this repository as an app source:
-
-```
-https://github.com/jrs8205/ARK-launcher
-```
-
-Obtainium watches the Releases page and updates the launcher for you.
-
-## Feedback & questions
-
-Questions, ideas, and general chat are all welcome in
-[**GitHub Discussions**](https://github.com/jrs8205/ARK-launcher/discussions) or the
-[**r/ArkLauncher**](https://www.reddit.com/r/ArkLauncher/) community — in English or Finnish; release
-news goes out on the [**Telegram channel**](https://t.me/ARKLauncherUpdates).
-Found a bug? Please [open an issue](https://github.com/jrs8205/ARK-launcher/issues) instead.
-Discussions, the channel and Reddit are also linked in the app: **Settings ▸ About and feedback**.
-
-## Features
-
-- **Paged home screen** with free icon placement and smooth drag-and-drop — move icons within a
-  page, across pages, and between the home grid and the dock. Drag an app from the drawer straight
-  onto any page.
-- **Dock** of favorite apps and folders (reorder, drag in/out; drop an app onto a dock app to make a folder).
-- **Swipe up from the dock** to open the app drawer, as from anywhere on the home screen.
-- **App drawer with universal search** — one search box finds:
-  - installed **apps**,
-  - common **system settings** pages (type "wifi", "battery", …),
-  - **contacts** (opt-in; gated by a setting + the `READ_CONTACTS` permission),
-  - a **calculator / unit converter** (type `12*7` or `100 cm to in`).
-  - plus an optional **most-used apps** row.
-- **Home-screen widgets** — browse large previews, tap Add or drag a preview onto the home screen.
-  Long-press and continue dragging to move a widget; hold at a screen edge to change pages.
-  Resize handles show the footprint and respect the widget's size limits; compatible widgets can
-  stretch to full width or be reconfigured. Collection widgets (e.g. chat lists) scroll in place.
-  Built-in clock (with the next event, alarm and optional weather), battery and notification
-  widgets adapt to their size and offer translucent or themed backgrounds in Settings ▸ Widgets.
-- **Folders** on the home screen and inside the drawer: a tap opens a folder to look, a pencil opens its editor.
-- **Notification dots / badges** (via a notification-listener service; dot or Nova-style count).
-- **People widget**: messages, missed calls and mail grouped by person as tiles, with optional
-  batch delivery that holds others' messages in the launcher's widgets, badges and status bar until
-  set times. Android notifications, sounds and pop-ups remain active; new messages from pinned
-  people, missed calls and recognized one-time codes bypass the batch.
-- **Page menu**: add a page to the left or right, set the home page, remove an empty page.
-- **Material You themed icons** (monochrome, on supported Android versions), optionally for
-  **every app** (apps without a themed icon get a silhouette of their own), and third-party
-  **[icon packs](https://github.com/jrs8205/ARK-launcher/wiki/Icon-Packs)**.
-- **Icon shapes**: circle, squircle, rounded square, square, teardrop, hexagon, octagon or flower for
-  every app icon, or the phone's own shape. An old icon that has no layers of its own is enlarged to
-  fill the shape (a free-form logo stands on a plate of it); an icon pack's icons keep theirs.
-- Optional **themed status bar** with the clock, status indicators and notification icons.
-- **Configurable gestures:** swipe up → app drawer, swipe down → notifications, a configurable
-  **left-edge swipe** that launches an app of your choice, an opt-in **swipe up on a home folder**
-  that opens the folder's first app, and per-icon **"Swipe up opens"** and **"Swipe down opens"**
-  choices (Edit) that open another app from a home or dock icon. An **icon swipe distance** slider
-  sets how far such a swipe must travel before it fires.
-- **Customizable look** — a **font** for everything the launcher draws (six families Android ships),
-  adjustable app-label **text size** and **colour**, **one- or two-line
-  labels** (per surface), icon size for home and dock and separately for the app drawer, dock and
-  drawer opacity, an **app drawer background colour** or none at all (the text turns black or white to match, or takes a
-  **label colour** of your own), a
-  **picture of your own behind the app drawer** with a dim for legibility (the colour is off while it is set), an
-  optional **wallpaper blur** behind the rising app drawer (Android 12+, with a
-  strength slider; the home screen fades out under a see-through drawer so only the wallpaper shows), widget
-  edges aligned with the icons, hiding home-screen apps from the drawer, grid columns, **folder
-  columns**, page indicator, and more. App drawer folders can lead the list or sit among the apps
-  A–Z.
-- **One base colour for the whole launcher** — eight colours, **Black** for a look without colour, or
-  **Chameleon**, which follows the wallpaper (Settings ▸ Appearance). Everything is coloured from it, in
-  the light and the dark theme, with softer shapes, grouped lists and pill-shaped controls throughout.
-- **Wallpaper scrolling** — the wallpaper moves with the home pages (Settings ▸ Home screen; on by
-  default, can be turned off).
-- **Private space** (Android 15 and later, as the default launcher) — once a private space is set up in
-  Android's own settings, the app drawer has a **Private** tab right under the search field: unlock the
-  space, start its apps, lock it again, with an Install tile and a shortcut to Android's settings for it.
-  While it is unlocked the search finds its apps too (marked with a lock), and typing "private space"
-  leads to the tab. With **hide when locked** (Android's own setting on Android 16, the launcher's on
-  Android 15) a locked space has no tab and is opened through the search. Nothing about private apps is
-  stored or backed up.
-- **Settings that are easy to find** — a short main page of categories, each with a page of its own, and a
-  search field that finds any setting by its name or description and opens its page at the row.
-- **Glass layer over the wallpaper** — an optional frosted sheet behind the icons and the bars, from
-  the top of the screen to the bottom, with a strength slider; the system bars' icons stay readable
-  over it.
-- **Folder appearance** — show or hide app names in folders, folder icon size, row spacing, and a
-  background colour and opacity of your own (the text turns dark or light to match).
-- **Clock and weather widget look** — background colour and opacity, text size, and a weather icon
-  that is standard, colourful or animated, in two sizes.
-- **Hide the system navigation bar** on the home screen and the app drawer (swipe up from the bottom
-  edge to show it for a moment).
-- **Screensaver** — ARK-Launcher can be chosen as Android's screensaver (Settings ▸ Display ▸ Screen
-  saver) for a phone that is charging or docked: six styles (Glow, Minimal, Night, Ring, Gauges, Edge)
-  with a large clock, the date, the next alarm, the battery's level and charging power, and the icons of
-  unread notifications. The Screensaver page in the launcher's settings previews every style and holds
-  its options: what is shown, an accent colour, dimming by hand or by night hours, a brightness of its
-  own, burn-in protection, an optional start as soon as charging begins, and an optional notification
-  when the battery is full.
-- **Backup & restore** — export/import your layout and settings to a file (widgets included).
-- **Double-tap to lock** — double-tap empty home-screen space to lock the screen (opt-in; uses a
-  minimal accessibility service that reads nothing).
-- **Lock desktop** — a toggle that prevents accidental moving, removing, or adding of items.
-- **Pixel-style long-press menus** with app shortcuts and actions, plus an **empty-area menu**
-  (home settings / wallpaper), all in one consistent visual style.
-- Hide apps from the drawer, rename apps with custom labels, and a self-contained settings screen.
-
-## Tech stack
-
-- **Kotlin** + **Jetpack Compose** (Material 3), single-Activity.
-- **Hilt** (DI), **Room** (layout persistence), **DataStore** (preferences), **Coil** (icons),
-  **AppWidgetHost** (widgets).
-- Multi-module architecture with `build-logic` convention plugins.
-- JDK 21, AGP 9, Gradle 9.
-
-## Build
-
-You need **JDK 21** (the Android Studio JBR works well) and the Android SDK.
-
-```bash
-# Point the build at your SDK (or set sdk.dir in local.properties)
+```sh
 ./gradlew :app:assembleDebug
 ```
 
-Install on a connected device:
+The output is `app/build/outputs/apk/debug/app-debug.apk`. When CI passes, the APK is also available as a workflow artifact under **Actions → Android debug APK**.
 
-```bash
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-```
+The internal `org.arkikeskus.launcher` source namespace and Gradle convention plugin names remain intact for build compatibility. They are not the installed Android application ID.
 
-Set it as the default launcher from Android's Settings ▸ Apps ▸ Default apps ▸ Home app, or accept
-the prompt the app shows.
+## Original project and license
 
-Requirements: `minSdk 30`.
+This is a derivative of [jrs8205/ARK-launcher](https://github.com/jrs8205/ARK-launcher). Its contributors retain credit for their work; the original Apache-2.0 `LICENSE` and attribution `NOTICE` are preserved. The upstream donation/community links remain credited to their owners.
 
-## Project layout
-
-- `app` — the single Activity, manifest HOME intent filter, DI entry point, the AppWidgetHost.
-- `core/*` — `model`, `data` (Room/DataStore/repositories + search providers + backup),
-  `ui` (shared Compose components, popups, the expressive theme), `designsystem`, `launcher`.
-- `feature/*` — `home` (workspace + dock + widgets), `appdrawer`, `settings`, `backup`, `screensaver`.
-
-## Support development
-
-If ARK-Launcher is useful to you, you can support its development:
-
-- [GitHub Sponsors](https://github.com/sponsors/jrs8205) — monthly or one-time
-- [Buy Me a Coffee](https://buymeacoffee.com/jrs8205) — no sign-up needed
-
-## License
-
-Licensed under the **Apache License, Version 2.0** — see [LICENSE](LICENSE).
-
-This project adapts design/architecture patterns (re-implemented in Compose) from the
-Android Open Source Project's **Launcher3** (also Apache-2.0); see [NOTICE](NOTICE) for attribution.
-
-## Contributing
-
-Issues and pull requests are welcome — for feature ideas, consider starting a
-[Discussion](https://github.com/jrs8205/ARK-launcher/discussions) first. By contributing you agree
-your contributions are licensed under the project's Apache-2.0 license.
-
-**Translations welcome.** English and Finnish are maintained by the author; the other languages
-have not been reviewed by native speakers yet, so corrections from native speakers are
-especially appreciated — edit the `values-<lang>/strings.xml` files (one per module) and open a pull request.
+Report Movauncher bugs via [Issues](https://github.com/W0rd3r566/Movauncher/issues).

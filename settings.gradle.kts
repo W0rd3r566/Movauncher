@@ -21,7 +21,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "arkikeskus-launcher"
+rootProject.name = "Movauncher"
 
 include(":app")
 include(":core:model")

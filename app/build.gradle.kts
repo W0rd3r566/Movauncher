@@ -16,14 +16,15 @@ val keystoreProps = Properties().apply {
 }
 
 android {
+    // Keep internal source namespace intact until a separate verified migration.
     namespace = "org.arkikeskus.launcher"
     testOptions.unitTests.isIncludeAndroidResources = true
 
     defaultConfig {
         manifestPlaceholders["appLabel"] = "@string/app_name"
-        applicationId = "org.arkikeskus.launcher"
-        versionCode = 75
-        versionName = "1.2.0"
+        applicationId = "com.movauncher.launcher"
+        versionCode = 1
+        versionName = "0.1.0"
     }
 
     // F-Droid rejects the Play "Dependency metadata" signing block AGP adds by default.
@@ -57,7 +58,7 @@ android {
             applicationIdSuffix = ".debug"
             // Installed beside the release build on the test phones: a distinct app-list label keeps
             // its own (separate) home screen from being taken for the release one.
-            manifestPlaceholders["appLabel"] = "ARK-Launcher debug"
+            manifestPlaceholders["appLabel"] = "Movauncher debug"
         }
         release {
             isMinifyEnabled = true
@@ -85,7 +86,7 @@ androidComponents {
         for (name in listOf("nonMinifiedRelease", "benchmarkRelease")) {
             extension.buildTypes.findByName(name)?.apply {
                 applicationIdSuffix = ".bench"
-                manifestPlaceholders["appLabel"] = "ARK-Launcher bench"
+                manifestPlaceholders["appLabel"] = "Movauncher bench"
             }
         }
     }

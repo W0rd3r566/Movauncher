@@ -78,4 +78,4 @@ internal fun VersionLine() {
     }
 }
 
-private const val RELEASES_URL = "https://github.com/jrs8205/ARK-launcher/releases"
+private const val RELEASES_URL = "https://github.com/W0rd3r566/Movauncher/releases"

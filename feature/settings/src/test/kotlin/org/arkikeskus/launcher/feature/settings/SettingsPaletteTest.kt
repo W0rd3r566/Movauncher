@@ -24,7 +24,8 @@ class SettingsPaletteTest {
 
     // The default, the two hardest hues (a light fill and a dark one), a mid one, and no colour at all.
     private val seeds = listOf(
-        "orange" to DefaultPaletteSeed,
+        "graphite" to DefaultPaletteSeed,
+        "orange" to PaletteSeed.Hue(15f),
         "yellow" to PaletteSeed.Hue(46f, 1f),
         "blue" to PaletteSeed.Hue(220f),
         "teal" to PaletteSeed.Hue(182f),
@@ -63,9 +64,9 @@ class SettingsPaletteTest {
 
     @Test fun theAccentTextIsTheFillWhereTheFillReadsAndMovedWhereItDoesNot() {
         // Orange on dark reads as it is; on light the fill is 3.7:1 on a card, so the text is deeper.
-        val dark = settingsPalette(basePalette(DefaultPaletteSeed, dark = true))
+        val dark = settingsPalette(basePalette(PaletteSeed.Hue(15f), dark = true))
         assertThat(dark.accent).isEqualTo(dark.fill)
-        val light = settingsPalette(basePalette(DefaultPaletteSeed, dark = false))
+        val light = settingsPalette(basePalette(PaletteSeed.Hue(15f), dark = false))
         assertThat(ratio(light.fill, light.surfaceHi)).isLessThan(READABLE_TEXT)
         assertThat(light.accent).isNotEqualTo(light.fill)
         // Still an orange, only deeper: red leads, blue trails.

@@ -55,7 +55,7 @@ import org.arkikeskus.launcher.ui.expressive.rememberPressScale
 
 /**
  * The first page of Settings: the title, the search field, the default-launcher row, the categories, each opening a
- * page of its own through [onOpen], then the support block and the installed version. While something is typed in
+ * page of its own through [onOpen], then the source-code link and the installed version. While something is typed in
  * the field ([query]), the rows it found ([hits]) take the place of everything below it; [onOpenHit] opens one.
  */
 @Composable
@@ -110,9 +110,8 @@ internal fun SettingsMainPage(
                 CategoryRow(category, summary) { onOpen(category) }
             }
 
-            // Support the work: a quiet section at the very end (SupportSection.kt), the browser opens the page.
-            // A title and a card: not a row of a group.
-            SettingRow("E1", grouped = false) { SupportSection(onOpen = { openSupportLink(context, it) }) }
+            // A single link to the Movauncher source repository replaces the donation section.
+            SettingRow("E1", grouped = false) { SourceCodeSection(onOpen = { openMovauncherSource(context) }) }
 
             VersionLine()
         }

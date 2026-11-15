@@ -210,11 +210,8 @@
     <string name="settings_feedback_telegram_desc">Neuigkeiten zu Versionen – t.me/ARKLauncherUpdates</string>
     <string name="settings_feedback_reddit">Reddit-Community</string>
     <string name="settings_feedback_reddit_desc">Beiträge und Diskussion – r/ArkLauncher</string>
-    <string name="settings_support_title">ARK-Launcher unterstützen</string>
-    <string name="settings_support_text">ARK-Launcher ist kostenlos und quelloffen und bleibt es auch. Wenn es dein Telefon angenehmer macht, kannst du mir einen Kaffee ausgeben oder die Arbeit sponsern.</string>
-    <string name="settings_support_github">Auf GitHub sponsern</string>
-    <string name="settings_support_coffee">Einen Kaffee ausgeben</string>
-    <string name="settings_support_paypal">PayPal</string>
+    <string name="settings_source_code_title">Movauncher-Quellcode</string>
+    <string name="settings_source_code_desc">GitHub · W0rd3r566/Movauncher</string>
     <string name="settings_step_decrease">Verringern</string>
     <string name="settings_step_increase">Erhöhen</string>
     <string name="settings_widget_tonal">Designbasierte Hintergründe für integrierte Widgets</string>

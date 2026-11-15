@@ -210,11 +210,8 @@
     <string name="settings_feedback_telegram_desc">Julkaisu-uutiset — t.me/ARKLauncherUpdates</string>
     <string name="settings_feedback_reddit">Reddit-yhteisö</string>
     <string name="settings_feedback_reddit_desc">Julkaisut ja keskustelu — r/ArkLauncher</string>
-    <string name="settings_support_title">Tue ARK-Launcheria</string>
-    <string name="settings_support_text">ARK-Launcher on ilmainen ja avointa lähdekoodia, ja pysyy sellaisena. Jos se tekee puhelimestasi mukavamman, voit tarjota minulle kahvin tai sponsoroida työtä.</string>
-    <string name="settings_support_github">Sponsoroi GitHubissa</string>
-    <string name="settings_support_coffee">Tarjoa kahvi</string>
-    <string name="settings_support_paypal">PayPal</string>
+    <string name="settings_source_code_title">Movauncherin lähdekoodi</string>
+    <string name="settings_source_code_desc">GitHub · W0rd3r566/Movauncher</string>
     <string name="settings_step_decrease">Vähennä</string>
     <string name="settings_step_increase">Lisää</string>
     <string name="settings_widget_tonal">Widgettien teematausta</string>

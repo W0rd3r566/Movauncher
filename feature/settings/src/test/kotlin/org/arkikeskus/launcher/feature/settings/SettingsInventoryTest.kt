@@ -165,7 +165,7 @@ class SettingsInventoryTest {
             "B1" to "settings_backup",
             "U1" to "settings_updates_check", "FB1" to "settings_feedback_discussions",
             "FB2" to "settings_feedback_telegram", "FB3" to "settings_feedback_reddit",
-            "E1" to "settings_support_title",
+            "E1" to "settings_source_code_title",
         )
         assertThat(SettingsIndex.entries.map { it.id to res.getResourceEntryName(it.title) })
             .containsExactlyElementsIn(expected).inOrder()

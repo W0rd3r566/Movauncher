@@ -2,7 +2,6 @@ package org.arkikeskus.launcher.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
@@ -85,7 +84,7 @@ fun LauncherShell(
     val progress = remember { Animatable(0f).apply { updateBounds(0f, 1f) } }
     var shellHeightPx by remember { mutableFloatStateOf(1f) }
     var shellOrigin by remember { mutableStateOf(Offset.Zero) }
-    val settleSpring = spring<Float>(dampingRatio = 0.9f, stiffness = Spring.StiffnessMediumLow)
+    val settleSpring = spring<Float>(dampingRatio = 0.86f, stiffness = 500f)
 
     // The shared drag state. Created here so both the home screen and the app drawer feed the same
     // controller and the floating icon below can travel between them.

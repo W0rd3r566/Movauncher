@@ -30,7 +30,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 
-/** A grouped list: rows 2 dp apart, the group's outer corners 24 dp, the corners between its rows 6 dp. */
+/** A grouped list: rows 2 dp apart, the group's outer corners 18 dp, the corners between its rows 5 dp. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = Application::class, qualifiers = "en")
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
@@ -52,10 +52,10 @@ class ExpressiveGroupTest {
             val size = Size(300f, 60f)
             listOf(it.topStart, it.topEnd, it.bottomEnd, it.bottomStart).map { c -> c.toPx(size, density) }
         }
-        assertThat(corners(GroupPosition.Only)).containsExactly(24f, 24f, 24f, 24f).inOrder()
-        assertThat(corners(GroupPosition.First)).containsExactly(24f, 24f, 6f, 6f).inOrder()
-        assertThat(corners(GroupPosition.Middle)).containsExactly(6f, 6f, 6f, 6f).inOrder()
-        assertThat(corners(GroupPosition.Last)).containsExactly(6f, 6f, 24f, 24f).inOrder()
+        assertThat(corners(GroupPosition.Only)).containsExactly(18f, 18f, 18f, 18f).inOrder()
+        assertThat(corners(GroupPosition.First)).containsExactly(18f, 18f, 5f, 5f).inOrder()
+        assertThat(corners(GroupPosition.Middle)).containsExactly(5f, 5f, 5f, 5f).inOrder()
+        assertThat(corners(GroupPosition.Last)).containsExactly(5f, 5f, 18f, 18f).inOrder()
     }
 
     private var showMiddle by mutableStateOf(true)
@@ -81,7 +81,7 @@ class ExpressiveGroupTest {
 
     private fun pixels(tag: String): PixelMap = compose.onNodeWithTag(tag).captureToImage().toPixelMap()
 
-    /** A 24 dp corner leaves the point 3 px in from the corner outside the card; a 6 dp corner has it inside. */
+    /** A 18 dp corner leaves the point 3 px in from the corner outside the card; a 5 dp corner has it inside. */
     private fun PixelMap.wideCornerAt(top: Boolean): Boolean = this[3, if (top) 3 else height - 4] != card
 
     @Test fun rowsOfARunSitTwoDpApartAndARunEndsWithTheCardGap() {

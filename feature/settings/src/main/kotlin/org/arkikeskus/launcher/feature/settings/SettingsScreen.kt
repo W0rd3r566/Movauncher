@@ -115,9 +115,9 @@ internal class SettingsLists(
 private const val SCREEN_MAIN = ""
 
 /** How far a page slides as it comes in, and the spring it comes in on. */
-private val PAGE_SLIDE = 24.dp
-private val PageSlideSpec = spring<IntOffset>(dampingRatio = 0.8f, stiffness = 380f)
-private val PageFadeSpec = spring<Float>(dampingRatio = 0.8f, stiffness = 380f)
+private val PAGE_SLIDE = 14.dp
+private val PageSlideSpec = spring<IntOffset>(dampingRatio = 0.91f, stiffness = 560f)
+private val PageFadeSpec = spring<Float>(dampingRatio = 0.94f, stiffness = 600f)
 
 /** The two sub-screens of the App drawer page; the prefix keeps them apart from the category keys. */
 private const val SCREEN_HIDDEN_APPS = "sub:hidden"
@@ -218,7 +218,7 @@ internal fun SettingsContent(
                     } else {
                         // A page that opens comes in from the end, one that is returned to from the start.
                         val from = if (screenDepth(targetState) > screenDepth(initialState)) slide else -slide
-                        (slideInHorizontally(PageSlideSpec) { from } + fadeIn(PageFadeSpec)) togetherWith fadeOut(tween(100))
+                        (slideInHorizontally(PageSlideSpec) { from } + fadeIn(PageFadeSpec)) togetherWith fadeOut(tween(135))
                     }
                 },
                 label = "settings screen",

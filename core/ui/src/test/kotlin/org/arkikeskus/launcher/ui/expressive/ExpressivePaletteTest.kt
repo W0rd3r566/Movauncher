@@ -69,11 +69,13 @@ class ExpressivePaletteTest {
         var expressive: ExpressivePalette? = null
         compose.setContent { ExpressiveTheme { expressive = LocalExpressivePalette.current } }
         compose.waitForIdle()
-        assertThat(expressive).isEqualTo(basePalette(PaletteSeed.Hue(15f), dark = false).toExpressive())
+        assertThat(expressive).isEqualTo(basePalette(PaletteSeed.Graphite, dark = false).toExpressive())
     }
 
     @Test fun everyStoredChoiceHasItsSeed() {
         fun hue(h: Float, s: Float = 0.96f) = PaletteSeed.Hue(h, s)
+        assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_GRAPHITE, null)).isEqualTo(PaletteSeed.Graphite)
+        assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_MINT, null)).isEqualTo(hue(164f, 0.78f))
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_ORANGE, null)).isEqualTo(hue(15f))
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_BLUE, null)).isEqualTo(hue(220f))
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_GREEN, null)).isEqualTo(hue(143f, 0.85f))
@@ -84,7 +86,7 @@ class ExpressivePaletteTest {
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_RED, null)).isEqualTo(hue(355f, 0.90f))
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_BLACK, 0xFF1F8EF1.toInt())).isEqualTo(PaletteSeed.Mono)
         // Every choice of the setting is covered: none falls through to the default by accident.
-        assertThat(LauncherSettings.BASE_COLOURS).hasSize(10)
+        assertThat(LauncherSettings.BASE_COLOURS).hasSize(12)
     }
 
     @Test fun theChameleonFollowsTheWallpaperAndAnUnknownChoiceIsTheDefault() {
@@ -94,6 +96,6 @@ class ExpressivePaletteTest {
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_CHAMELEON, 0xFF808080.toInt())).isEqualTo(PaletteSeed.Mono)
         // A fixed choice ignores the wallpaper.
         assertThat(paletteSeed(LauncherSettings.BASE_COLOUR_TEAL, 0xFFFF0000.toInt())).isEqualTo(PaletteSeed.Hue(182f))
-        assertThat(paletteSeed("ultraviolet", 0xFFFF0000.toInt())).isEqualTo(PaletteSeed.Hue(15f))
+        assertThat(paletteSeed("ultraviolet", 0xFFFF0000.toInt())).isEqualTo(PaletteSeed.Graphite)
     }
 }

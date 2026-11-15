@@ -7,28 +7,28 @@ import org.arkikeskus.launcher.model.LauncherSettings
 import org.junit.Test
 
 /**
- * The base colour the whole launcher is coloured from: orange until the user chooses, one of ten
+ * The base colour the whole launcher is coloured from: graphite until the user chooses, one of ten
  * known values, part of the backup. The colour the Chameleon last took from the wallpaper is this
  * phone's own and stays out of it.
  */
 class BaseColourSettingsTest {
     private fun newRepository() = SettingsRepository(InMemoryDataStore())
 
-    @Test fun `the base colour is orange until chosen and an unknown value reads as orange`() = runTest {
+    @Test fun `the base colour is graphite until chosen and an unknown value reads as graphite`() = runTest {
         val repo = newRepository()
-        assertThat(repo.settings.first().baseColour).isEqualTo(LauncherSettings.BASE_COLOUR_ORANGE)
+        assertThat(repo.settings.first().baseColour).isEqualTo(LauncherSettings.BASE_COLOUR_GRAPHITE)
         repo.setBaseColour(LauncherSettings.BASE_COLOUR_CHAMELEON)
         assertThat(repo.settings.first().baseColour).isEqualTo(LauncherSettings.BASE_COLOUR_CHAMELEON)
         repo.setBaseColour("ultraviolet")
-        assertThat(repo.settings.first().baseColour).isEqualTo(LauncherSettings.BASE_COLOUR_ORANGE)
+        assertThat(repo.settings.first().baseColour).isEqualTo(LauncherSettings.BASE_COLOUR_GRAPHITE)
     }
 
-    @Test fun `there are ten base colours and orange is the first and the default`() {
+    @Test fun `there are twelve base colours and graphite is the first and the default`() {
         assertThat(LauncherSettings.BASE_COLOURS).containsExactly(
-            "orange", "blue", "green", "violet", "rose", "teal", "yellow", "red", "black", "chameleon",
+            "graphite", "mint", "orange", "blue", "green", "violet", "rose", "teal", "yellow", "red", "black", "chameleon",
         ).inOrder()
-        assertThat(LauncherSettings.BASE_COLOUR_DEFAULT).isEqualTo("orange")
-        assertThat(LauncherSettings().baseColour).isEqualTo("orange")
+        assertThat(LauncherSettings.BASE_COLOUR_DEFAULT).isEqualTo("graphite")
+        assertThat(LauncherSettings().baseColour).isEqualTo("graphite")
     }
 
     @Test fun `the base colour travels in the backup`() = runTest {
@@ -40,18 +40,18 @@ class BaseColourSettingsTest {
         assertThat(restored.settings.first().baseColour).isEqualTo("teal")
     }
 
-    @Test fun `a backup from before the base colour restores as orange`() = runTest {
+    @Test fun `a backup from before the base colour restores as graphite`() = runTest {
         val phone = newRepository()
         phone.setBaseColour(LauncherSettings.BASE_COLOUR_TEAL)
         phone.importRaw(mapOf("font_family" to LauncherSettings.FONT_SERIF))
-        assertThat(phone.settings.first().baseColour).isEqualTo("orange")
+        assertThat(phone.settings.first().baseColour).isEqualTo("graphite")
     }
 
-    @Test fun `a backup with a base colour of the wrong type or an unknown one reads as orange`() = runTest {
+    @Test fun `a backup with a base colour of the wrong type or an unknown one reads as graphite`() = runTest {
         val wrongType = newRepository().also { it.importRaw(mapOf("base_colour" to 7)) }
-        assertThat(wrongType.settings.first().baseColour).isEqualTo("orange")
+        assertThat(wrongType.settings.first().baseColour).isEqualTo("graphite")
         val unknown = newRepository().also { it.importRaw(mapOf("base_colour" to "infrared")) }
-        assertThat(unknown.settings.first().baseColour).isEqualTo("orange")
+        assertThat(unknown.settings.first().baseColour).isEqualTo("graphite")
     }
 
     @Test fun `the chameleon's last colour is kept and cleared`() = runTest {

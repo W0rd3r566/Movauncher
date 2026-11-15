@@ -12,6 +12,8 @@ sealed interface PaletteSeed {
     data class Hue(val hue: Float, val saturation: Float = 0.96f) : PaletteSeed
 
     /** The monochrome look: black, white and greys. */
+    data object Graphite : PaletteSeed
+
     data object Mono : PaletteSeed
 }
 
@@ -72,12 +74,15 @@ private const val CONTAINER_STEPS = 40
  * The palette of [seed] for a dark or a light screen. A seed that is not a usable number (a hue
  * converted from a colour that had none) gives the monochrome palette rather than a random hue.
  */
-fun basePalette(seed: PaletteSeed, dark: Boolean): BasePalette =
-    if (seed is PaletteSeed.Hue && seed.hue.isFinite() && seed.saturation.isFinite()) {
+fun basePalette(seed: PaletteSeed, dark: Boolean): BasePalette = when (seed) {
+    PaletteSeed.Graphite -> graphite(dark)
+    PaletteSeed.Mono -> mono(dark)
+    is PaletteSeed.Hue -> if (seed.hue.isFinite() && seed.saturation.isFinite()) {
         tinted(((seed.hue % 360f) + 360f) % 360f, seed.saturation.coerceIn(0f, 1f), dark)
     } else {
         mono(dark)
     }
+}
 
 /**
  * The fill as a foreground on [surface] (a title, an icon tint): itself where it reads as text,
@@ -162,6 +167,31 @@ private fun mono(dark: Boolean): BasePalette {
         onFill = if (dark) Color.Black else Color.White,
         container = grey(if (dark) 0.22f else 0.84f),
         onContainer = grey(if (dark) 0.96f else 0.08f),
+        error = readable(if (dark) DarkError else LightError, text, listOf(background, card)),
+    )
+}
+
+/** Low-chroma graphite surfaces and a restrained mint accent. */
+private fun graphite(dark: Boolean): BasePalette {
+    val background = Color(if (dark) 0xFF111518 else 0xFFF7F9F9)
+    val card = Color(if (dark) 0xFF242A2E else 0xFFE5EBEC)
+    val text = Color(if (dark) 0xFFF0F4F4 else 0xFF162127)
+    val dim = Color(if (dark) 0xFFB3BEC1 else 0xFF48565C)
+    val fill = Color(if (dark) 0xFF9CE6D0 else 0xFF226451)
+    return BasePalette(
+        seed = PaletteSeed.Graphite,
+        dark = dark,
+        background = background,
+        card = card,
+        text = text,
+        dim = dim,
+        faint = Color(if (dark) 0xFF74858B else 0xFF7C898D),
+        track = Color(if (dark) 0xFF46555A else 0xFFBBC8C8),
+        offThumb = dim,
+        fill = fill,
+        onFill = if (dark) Color(0xFF112A23) else Color.White,
+        container = Color(if (dark) 0xFF25433B else 0xFFD0F0E5),
+        onContainer = Color(if (dark) 0xFFE0FFF3 else 0xFF103B30),
         error = readable(if (dark) DarkError else LightError, text, listOf(background, card)),
     )
 }

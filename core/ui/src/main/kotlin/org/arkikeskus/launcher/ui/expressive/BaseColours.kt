@@ -12,6 +12,8 @@ import org.arkikeskus.launcher.model.LauncherSettings
  * default colour.
  */
 fun paletteSeed(baseColour: String, wallpaperArgb: Int?): PaletteSeed = when (baseColour) {
+    LauncherSettings.BASE_COLOUR_GRAPHITE -> PaletteSeed.Graphite
+    LauncherSettings.BASE_COLOUR_MINT -> PaletteSeed.Hue(164f, 0.78f)
     LauncherSettings.BASE_COLOUR_ORANGE -> PaletteSeed.Hue(15f)
     LauncherSettings.BASE_COLOUR_BLUE -> PaletteSeed.Hue(220f)
     LauncherSettings.BASE_COLOUR_GREEN -> PaletteSeed.Hue(143f, 0.85f)

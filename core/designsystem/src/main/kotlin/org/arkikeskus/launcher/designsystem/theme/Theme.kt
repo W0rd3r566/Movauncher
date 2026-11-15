@@ -9,8 +9,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.font.FontFamily
 
-/** The base colour of a launcher nobody has coloured yet: orange. */
-val DefaultPaletteSeed: PaletteSeed = PaletteSeed.Hue(15f)
+/** The default palette of Movauncher before preferences load. */
+val DefaultPaletteSeed: PaletteSeed = PaletteSeed.Graphite
 
 /** The palette the theme root provides; null outside one (a popup or a preview on its own). Read it
  *  through [currentBasePalette]. */

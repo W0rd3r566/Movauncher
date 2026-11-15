@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Ayarlar</string>
     <string name="settings_set_default">Varsayılan başlatıcı yap</string>
-    <string name="settings_default_current">ARK-Launcher varsayılan başlatıcınız</string>
-    <string name="settings_default_tap">ARK-Launcher\'ı ana ekran uygulamanız yapmak için dokunun</string>
+    <string name="settings_default_current">Movauncher varsayılan başlatıcınız</string>
+    <string name="settings_default_tap">Movauncher\'ı ana ekran uygulamanız yapmak için dokunun</string>
     <string name="settings_gestures">Hareketler</string>
     <string name="settings_show_weather">Widget\'ta hava durumu</string>
     <string name="settings_weather_app">Hava durumuna dokunma şunu açar</string>
@@ -244,7 +244,7 @@
     <string name="settings_cat_gestures_summary">Kaydırmalar, çift dokunma, uzun basma</string>
     <string name="settings_cat_bars_summary">Sistem çubuklarını gizleme, kendi durum çubuğu</string>
     <string name="settings_cat_notifications_summary">Simgelerde bildirim noktaları</string>
-    <string name="settings_cat_permissions_summary">ARK-Launcher\'ın kullanabildikleri</string>
+    <string name="settings_cat_permissions_summary">Movauncher\'ın kullanabildikleri</string>
     <string name="settings_cat_backup_summary">Düzeni ve ayarları kaydedin ve geri yükleyin</string>
     <string name="settings_cat_about_summary">Güncellemeler, geri bildirim kanalları, sürüm</string>
     <string name="settings_back">Geri</string>
@@ -290,6 +290,6 @@
     <string name="settings_screensaver_keywords">ekran koruyucu saat şarj dok komodin yanma</string>
     <string name="settings_screensaver_battery_full">Pil dolu bildirimi</string>
     <string name="settings_screensaver_battery_full_desc">Ekran koruyucu gösterilirken pil dolduğunda gelen bildirim. Açıldığında bildirim gönderme izni istenir.</string>
-    <string name="settings_screensaver_battery_full_denied">ARK-Launcher için bildirimlere izin verilmiyor, bu yüzden bildirim gönderilemiyor. Uygulamanın bildirim ayarlarından izin verin.</string>
+    <string name="settings_screensaver_battery_full_denied">Movauncher için bildirimlere izin verilmiyor, bu yüzden bildirim gönderilemiyor. Uygulamanın bildirim ayarlarından izin verin.</string>
     <string name="settings_permission_notifications">Bildirim gönderme</string>
 </resources>

@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Configurações</string>
     <string name="settings_set_default">Definir como tela inicial padrão</string>
-    <string name="settings_default_current">O ARK-Launcher é sua tela inicial padrão</string>
-    <string name="settings_default_tap">Toque para definir o ARK-Launcher como app de tela inicial</string>
+    <string name="settings_default_current">O Movauncher é sua tela inicial padrão</string>
+    <string name="settings_default_tap">Toque para definir o Movauncher como app de tela inicial</string>
     <string name="settings_gestures">Gestos</string>
     <string name="settings_show_weather">Clima no widget</string>
     <string name="settings_weather_app">Tocar no clima abre</string>
@@ -97,9 +97,9 @@
     <string name="settings_people_privacy_sender">Somente o remetente</string>
     <string name="settings_people_privacy_count">Somente a contagem</string>
     <string name="settings_people_show_apps">O widget Pessoas também mostra notificações de outros apps</string>
-    <string name="settings_people_batch">Entrega em lotes no ARK-Launcher: retém as mensagens, exceto as de pessoas fixadas</string>
+    <string name="settings_people_batch">Entrega em lotes no Movauncher: retém as mensagens, exceto as de pessoas fixadas</string>
     <string name="settings_people_batch_times">Horários da entrega em lotes</string>
-    <string name="settings_people_batch_times_hint">Horários separados por vírgula, por exemplo: 08:00, 12:00, 17:00. A entrega em lotes afeta apenas os widgets, os pontos de notificação e a barra de status do próprio ARK-Launcher. A aba de notificações, os sons e os pop-ups do Android funcionam normalmente. Novas mensagens de pessoas fixadas, chamadas perdidas e códigos de uso único reconhecidos aparecem imediatamente. Fixar uma pessoa não libera, por si só, as mensagens que já estão aguardando. Desativar a entrega em lotes libera essas mensagens no ARK-Launcher.</string>
+    <string name="settings_people_batch_times_hint">Horários separados por vírgula, por exemplo: 08:00, 12:00, 17:00. A entrega em lotes afeta apenas os widgets, os pontos de notificação e a barra de status do próprio Movauncher. A aba de notificações, os sons e os pop-ups do Android funcionam normalmente. Novas mensagens de pessoas fixadas, chamadas perdidas e códigos de uso único reconhecidos aparecem imediatamente. Fixar uma pessoa não libera, por si só, as mensagens que já estão aguardando. Desativar a entrega em lotes libera essas mensagens no Movauncher.</string>
     <string name="settings_people_batch_times_save">Salvar</string>
     <string name="settings_permissions">Permissões</string>
     <string name="settings_permission_granted">Concedida</string>
@@ -247,7 +247,7 @@
     <string name="settings_cat_gestures_summary">Deslizes, toque duplo, toque longo</string>
     <string name="settings_cat_bars_summary">Ocultar as barras do sistema, barra de status própria</string>
     <string name="settings_cat_notifications_summary">Pontos de notificação nos ícones</string>
-    <string name="settings_cat_permissions_summary">O que o ARK-Launcher pode usar</string>
+    <string name="settings_cat_permissions_summary">O que o Movauncher pode usar</string>
     <string name="settings_cat_backup_summary">Salvar e restaurar o layout e as configurações</string>
     <string name="settings_cat_about_summary">Atualizações, canais de feedback, versão</string>
     <string name="settings_back">Voltar</string>
@@ -294,6 +294,6 @@
     <string name="settings_screensaver_keywords">proteção de tela descanso relógio carregamento dock cabeceira queima</string>
     <string name="settings_screensaver_battery_full">Notificação de bateria cheia</string>
     <string name="settings_screensaver_battery_full_desc">Uma notificação quando a bateria fica cheia enquanto a proteção de tela é exibida. Ao ativar, é pedida a permissão para enviar notificações.</string>
-    <string name="settings_screensaver_battery_full_denied">As notificações não estão permitidas para o ARK-Launcher, então nenhuma pode ser enviada. Permita nas configurações de notificações do app.</string>
+    <string name="settings_screensaver_battery_full_denied">As notificações não estão permitidas para o Movauncher, então nenhuma pode ser enviada. Permita nas configurações de notificações do app.</string>
     <string name="settings_permission_notifications">Enviar notificações</string>
 </resources>

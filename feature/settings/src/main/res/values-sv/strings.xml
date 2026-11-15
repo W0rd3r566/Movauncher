@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Inställningar</string>
     <string name="settings_set_default">Ange som startskärmsapp</string>
-    <string name="settings_default_current">ARK-Launcher är din startskärmsapp</string>
-    <string name="settings_default_tap">Tryck för att ange ARK-Launcher som startskärmsapp</string>
+    <string name="settings_default_current">Movauncher är din startskärmsapp</string>
+    <string name="settings_default_tap">Tryck för att ange Movauncher som startskärmsapp</string>
     <string name="settings_gestures">Rörelser</string>
     <string name="settings_show_weather">Väder i widgeten</string>
     <string name="settings_weather_app">Tryck på vädret öppnar</string>
@@ -97,9 +97,9 @@
     <string name="settings_people_privacy_sender">Endast avsändare</string>
     <string name="settings_people_privacy_count">Endast antal</string>
     <string name="settings_people_show_apps">Widgeten Personer visar även aviseringar från andra appar</string>
-    <string name="settings_people_batch">Samlad leverans i ARK-Launcher: andras meddelanden hålls kvar, fästa personer kommer fram direkt</string>
+    <string name="settings_people_batch">Samlad leverans i Movauncher: andras meddelanden hålls kvar, fästa personer kommer fram direkt</string>
     <string name="settings_people_batch_times">Tider för samlad leverans</string>
-    <string name="settings_people_batch_times_hint">Tider åtskilda med kommatecken, t.ex. 08:00, 12:00, 17:00. Samlad leverans påverkar bara ARK-Launchers widgetar, aviseringsprickar och eget statusfält. Androids aviseringspanel, ljud och popup-aviseringar fungerar som vanligt. Nya meddelanden från fästa personer, missade samtal och igenkända engångskoder visas direkt. Att fästa en person släpper inte fram meddelanden som redan väntar. Om du stänger av samlad leverans släpps de fram i ARK-Launcher.</string>
+    <string name="settings_people_batch_times_hint">Tider åtskilda med kommatecken, t.ex. 08:00, 12:00, 17:00. Samlad leverans påverkar bara Movaunchers widgetar, aviseringsprickar och eget statusfält. Androids aviseringspanel, ljud och popup-aviseringar fungerar som vanligt. Nya meddelanden från fästa personer, missade samtal och igenkända engångskoder visas direkt. Att fästa en person släpper inte fram meddelanden som redan väntar. Om du stänger av samlad leverans släpps de fram i Movauncher.</string>
     <string name="settings_people_batch_times_save">Spara</string>
     <string name="settings_permissions">Behörigheter</string>
     <string name="settings_permission_granted">Tillåten</string>
@@ -244,7 +244,7 @@
     <string name="settings_cat_gestures_summary">Svep, dubbeltryck, långtryck</string>
     <string name="settings_cat_bars_summary">Dölj systemfälten, eget statusfält</string>
     <string name="settings_cat_notifications_summary">Aviseringsprickar på ikoner</string>
-    <string name="settings_cat_permissions_summary">Vad ARK-Launcher får använda</string>
+    <string name="settings_cat_permissions_summary">Vad Movauncher får använda</string>
     <string name="settings_cat_backup_summary">Spara och återställ layout och inställningar</string>
     <string name="settings_cat_about_summary">Uppdateringar, feedbackkanaler, version</string>
     <string name="settings_back">Tillbaka</string>
@@ -290,6 +290,6 @@
     <string name="settings_screensaver_keywords">skärmsläckare klocka laddning docka nattduksbord inbränning</string>
     <string name="settings_screensaver_battery_full">Avisering om fullt batteri</string>
     <string name="settings_screensaver_battery_full_desc">En avisering när batteriet blir fullt medan skärmsläckaren visas. När du slår på detta frågas det om behörighet att skicka aviseringar.</string>
-    <string name="settings_screensaver_battery_full_denied">Aviseringar är inte tillåtna för ARK-Launcher, så inga kan skickas. Tillåt dem i appens aviseringsinställningar.</string>
+    <string name="settings_screensaver_battery_full_denied">Aviseringar är inte tillåtna för Movauncher, så inga kan skickas. Tillåt dem i appens aviseringsinställningar.</string>
     <string name="settings_permission_notifications">Skicka aviseringar</string>
 </resources>

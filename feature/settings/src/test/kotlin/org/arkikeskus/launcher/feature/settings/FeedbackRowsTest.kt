@@ -50,7 +50,7 @@ class FeedbackRowsTest {
         compose.onNodeWithText(res.getString(R.string.settings_feedback_reddit)).performClick()
 
         assertThat(opened).containsExactly(DISCUSSIONS_URL, TELEGRAM_URL, REDDIT_URL).inOrder()
-        assertThat(DISCUSSIONS_URL).isEqualTo("https://github.com/jrs8205/ARK-launcher/discussions")
+        assertThat(DISCUSSIONS_URL).isEqualTo("https://github.com/W0rd3r566/Movauncher/issues")
         assertThat(TELEGRAM_URL).isEqualTo("https://t.me/ARKLauncherUpdates")
         assertThat(REDDIT_URL).isEqualTo("https://www.reddit.com/r/ArkLauncher/")
     }

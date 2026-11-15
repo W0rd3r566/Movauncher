@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Configuración</string>
     <string name="settings_set_default">Establecer como launcher predeterminado</string>
-    <string name="settings_default_current">ARK-Launcher es tu launcher predeterminado</string>
-    <string name="settings_default_tap">Toca para usar ARK-Launcher como aplicación de inicio</string>
+    <string name="settings_default_current">Movauncher es tu launcher predeterminado</string>
+    <string name="settings_default_tap">Toca para usar Movauncher como aplicación de inicio</string>
     <string name="settings_gestures">Gestos</string>
     <string name="settings_show_weather">Clima en el widget</string>
     <string name="settings_weather_app">Tocar el clima abre</string>
@@ -247,7 +247,7 @@
     <string name="settings_cat_gestures_summary">Deslizamientos, doble toque, pulsación larga</string>
     <string name="settings_cat_bars_summary">Ocultar las barras del sistema, barra de estado propia</string>
     <string name="settings_cat_notifications_summary">Puntos de notificación en los iconos</string>
-    <string name="settings_cat_permissions_summary">Lo que ARK-Launcher puede usar</string>
+    <string name="settings_cat_permissions_summary">Lo que Movauncher puede usar</string>
     <string name="settings_cat_backup_summary">Guardar y restaurar el diseño y la configuración</string>
     <string name="settings_cat_about_summary">Actualizaciones, canales de comentarios, versión</string>
     <string name="settings_back">Atrás</string>
@@ -294,6 +294,6 @@
     <string name="settings_screensaver_keywords">salvapantallas protector de pantalla reloj carga base mesilla quemado</string>
     <string name="settings_screensaver_battery_full">Notificación de batería llena</string>
     <string name="settings_screensaver_battery_full_desc">Una notificación cuando la batería se llena mientras se muestra el salvapantallas. Al activarlo se pide permiso para enviar notificaciones.</string>
-    <string name="settings_screensaver_battery_full_denied">Las notificaciones no están permitidas para ARK-Launcher, así que no se puede enviar ninguna. Permítelas en los ajustes de notificaciones de la aplicación.</string>
+    <string name="settings_screensaver_battery_full_denied">Las notificaciones no están permitidas para Movauncher, así que no se puede enviar ninguna. Permítelas en los ajustes de notificaciones de la aplicación.</string>
     <string name="settings_permission_notifications">Enviar notificaciones</string>
 </resources>

@@ -18,7 +18,7 @@ Movauncher Studio's freeform visual layout editing, mixable design systems, anim
 Built with Kotlin and Jetpack Compose. Android 11 (API 30) or later.
 
 ```sh
-./gradlew :app:assembleDebug
+bash ./gradlew :app:assembleDebug
 ```
 
 The output is `app/build/outputs/apk/debug/app-debug.apk`. When CI passes, the APK is also available as a workflow artifact under **Actions → Android debug APK**.

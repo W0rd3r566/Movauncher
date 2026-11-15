@@ -279,12 +279,7 @@ internal object SettingsIndex {
             row("FB2", c, R.string.settings_feedback_telegram, R.string.settings_feedback_telegram_desc)
             row("FB3", c, R.string.settings_feedback_reddit, R.string.settings_feedback_reddit_desc)
         }
-        row(
-            "E1", null, R.string.settings_support_title, R.string.settings_support_text,
-            keywords = listOf(
-                R.string.settings_support_github, R.string.settings_support_coffee, R.string.settings_support_paypal,
-            ),
-        )
+        row("E1", null, R.string.settings_source_code_title, R.string.settings_source_code_desc)
     }
 
     private val byId: Map<String, SettingEntry> = entries.associateBy { it.id }

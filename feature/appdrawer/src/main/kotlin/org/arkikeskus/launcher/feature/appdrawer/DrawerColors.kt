@@ -156,7 +156,8 @@ internal fun drawerExpressivePalette(
     return base.copy(
         bg = background,
         surfaceHi = card,
-        dim = base.text.copy(alpha = DIM_TEXT).compositeOver(card),
+        // Keep secondary text muted, but never below 3.5:1 on a user's custom drawer colour.
+        dim = readableOn(base.text.copy(alpha = DIM_TEXT).compositeOver(card), card, base.text, target = 3.5f),
         faint = base.text.copy(alpha = FAINT_TEXT).compositeOver(card),
         btn = onBackground.copy(alpha = 0.07f),
         // The accent (result text, titles, icon tints) vanished on a red or orange card (1.0:1): pushed toward the text.

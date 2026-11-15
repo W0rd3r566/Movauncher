@@ -24,7 +24,7 @@ jobs:
           log-accepted-android-sdk-licenses: 'false'
       - uses: gradle/actions/setup-gradle@v4
       - name: Build and test Movauncher debug APK
-        run: bash ./gradlew --no-daemon :app:assembleDebug :feature:settings:testDebugUnitTest :app:testDebugUnitTest
+        run: bash ./gradlew --no-daemon :app:assembleDebug :feature:settings:testDebugUnitTest :app:testDebugUnitTest :core:ui:testDebugUnitTest :feature:home:testDebugUnitTest :feature:appdrawer:testDebugUnitTest
       - uses: actions/upload-artifact@v4
         with:
           name: Movauncher-debug-apk

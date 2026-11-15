@@ -75,7 +75,7 @@ class AppActionPopupHeldTest {
         compose.waitForIdle()
         assertThat(picked).isEqualTo(0)
 
-        held = false
+        compose.runOnIdle { held = false }
         compose.waitForIdle()
         compose.onNodeWithText("App info").performClick()
         assertThat(picked).isEqualTo(1)

@@ -9,7 +9,7 @@ internal val DRAWER_CORNER_RADIUS = 22.dp
 internal val DRAWER_EDGE_ELEVATION = 4.dp
 
 /** How dark home gets behind a fully open drawer (Material 3 scrim strength). */
-internal const val DRAWER_SCRIM_MAX_ALPHA = 0.26f
+internal const val DRAWER_SCRIM_MAX_ALPHA = 0.32f
 
 /** The last stretch of the opening over which the corners square off. */
 private const val SQUARE_OFF_SPAN = 0.15f

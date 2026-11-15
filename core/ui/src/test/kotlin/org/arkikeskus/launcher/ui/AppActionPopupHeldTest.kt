@@ -60,7 +60,9 @@ class AppActionPopupHeldTest {
     @Test fun theMenuWindowTakesASecondFinger() {
         show()
 
-        val flags = (popupWindow().layoutParams as WindowManager.LayoutParams).flags
+        val flags = compose.runOnIdle {
+            (popupWindow().layoutParams as WindowManager.LayoutParams).flags
+        }
 
         assertThat(flags and WindowManager.LayoutParams.FLAG_SPLIT_TOUCH).isNotEqualTo(0)
         assertThat(flags and WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH).isNotEqualTo(0)

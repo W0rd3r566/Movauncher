@@ -41,7 +41,7 @@ import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 
 /**
- * The Appearance page's one row: the ten base colours. Every choice is there with its name, the
+ * The Appearance page's one row: the available base colours. Every choice is there with its name, the
  * stored one is the selected one, a tap reports the choice, and nothing is cut on a narrow screen
  * with large text in the longest languages.
  */
@@ -84,6 +84,7 @@ class AppearanceSectionTest {
     @Test fun everyChoiceCarriesItsNameForTheScreenReader() {
         show(selected = LauncherSettings.BASE_COLOUR_ORANGE)
         val names = mapOf(
+            LauncherSettings.BASE_COLOUR_GRAPHITE to "Graphite", LauncherSettings.BASE_COLOUR_MINT to "Mint",
             LauncherSettings.BASE_COLOUR_ORANGE to "Orange", LauncherSettings.BASE_COLOUR_BLUE to "Blue",
             LauncherSettings.BASE_COLOUR_GREEN to "Green", LauncherSettings.BASE_COLOUR_VIOLET to "Violet",
             LauncherSettings.BASE_COLOUR_ROSE to "Rose", LauncherSettings.BASE_COLOUR_TEAL to "Teal",

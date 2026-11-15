@@ -13,7 +13,7 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 import java.util.Locale
 
-/** The app's name as it is written: ARK-Launcher, the same in every language. */
+/** The app's name as it is written: Movauncher, the same in every language. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = Application::class)
 class AppNameTest {
@@ -25,9 +25,9 @@ class AppNameTest {
     }
 
     @Test
-    fun `the name is ARK-Launcher in every language`() {
+    fun `the name is Movauncher in every language`() {
         for (language in listOf("en", "fi", "de", "es", "fr", "pl", "pt", "ru", "sv", "tr")) {
-            assertThat(nameIn(language)).isEqualTo("ARK-Launcher")
+            assertThat(nameIn(language)).isEqualTo("Movauncher")
         }
     }
 
@@ -35,6 +35,6 @@ class AppNameTest {
     fun `the screensaver is listed under the app's name`() {
         val service = context.packageManager.getServiceInfo(ComponentName(context, ScreensaverService::class.java), 0)
 
-        assertThat(service.loadLabel(context.packageManager).toString()).isEqualTo("ARK-Launcher")
+        assertThat(service.loadLabel(context.packageManager).toString()).isEqualTo("Movauncher")
     }
 }

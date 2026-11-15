@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Настройки</string>
     <string name="settings_set_default">Сделать лаунчером по умолчанию</string>
-    <string name="settings_default_current">ARK-Launcher используется по умолчанию</string>
-    <string name="settings_default_tap">Нажмите, чтобы выбрать ARK-Launcher для главного экрана</string>
+    <string name="settings_default_current">Movauncher используется по умолчанию</string>
+    <string name="settings_default_tap">Нажмите, чтобы выбрать Movauncher для главного экрана</string>
     <string name="settings_gestures">Жесты</string>
     <string name="settings_show_weather">Погода в виджете</string>
     <string name="settings_weather_app">Нажатие на погоду открывает</string>
@@ -210,17 +210,14 @@
     <string name="settings_updates_check_desc">Открывает страницу релизов на GitHub в браузере</string>
     <string name="settings_open_link_failed">Браузер не найден. Адрес: %1$s</string>
     <string name="settings_feedback">Обратная связь</string>
-    <string name="settings_feedback_discussions">Отзывы и обсуждения</string>
-    <string name="settings_feedback_discussions_desc">Вопросы и идеи — GitHub Discussions</string>
+    <string name="settings_feedback_discussions">Ошибки и предложения на GitHub</string>
+    <string name="settings_feedback_discussions_desc">Сообщайте об ошибках и предлагайте идеи для Movauncher</string>
     <string name="settings_feedback_telegram">Канал в Telegram</string>
     <string name="settings_feedback_telegram_desc">Новости о выпусках — t.me/ARKLauncherUpdates</string>
     <string name="settings_feedback_reddit">Сообщество в Reddit</string>
     <string name="settings_feedback_reddit_desc">Посты и обсуждение — r/ArkLauncher</string>
-    <string name="settings_support_title">Поддержать ARK-Launcher</string>
-    <string name="settings_support_text">ARK-Launcher бесплатен, имеет открытый исходный код и останется таким. Если он делает ваш телефон приятнее, вы можете угостить меня кофе или спонсировать работу.</string>
-    <string name="settings_support_github">Спонсировать на GitHub</string>
-    <string name="settings_support_coffee">Угостить кофе</string>
-    <string name="settings_support_paypal">PayPal</string>
+    <string name="settings_source_code_title">Исходный код Movauncher</string>
+    <string name="settings_source_code_desc">GitHub · W0rd3r566/Movauncher</string>
     <string name="settings_step_decrease">Уменьшить</string>
     <string name="settings_step_increase">Увеличить</string>
     <string name="settings_widget_tonal">Тематический фон встроенных виджетов</string>
@@ -250,7 +247,7 @@
     <string name="settings_cat_gestures_summary">Свайпы, двойное нажатие, долгое нажатие</string>
     <string name="settings_cat_bars_summary">Скрытие системных панелей, своя строка состояния</string>
     <string name="settings_cat_notifications_summary">Значки уведомлений на приложениях</string>
-    <string name="settings_cat_permissions_summary">Что может использовать ARK-Launcher</string>
+    <string name="settings_cat_permissions_summary">Что может использовать Movauncher</string>
     <string name="settings_cat_backup_summary">Сохранение и восстановление макета и настроек</string>
     <string name="settings_cat_about_summary">Обновления, каналы обратной связи, версия</string>
     <string name="settings_back">Назад</string>
@@ -276,6 +273,8 @@
     <string name="settings_charging_animation_desc">Свечение на главном экране при подключении зарядного устройства и батарея, которая заполняется в строке состояния лаунчера во время зарядки.</string>
     <string name="settings_base_colour_desc">Окрашивает весь лаунчер</string>
     <string name="settings_base_colour_keywords">цвет тема акцент палитра color theme</string>
+    <string name="base_colour_graphite">Графит</string>
+    <string name="base_colour_mint">Мятный</string>
     <string name="base_colour_orange">Оранжевый</string>
     <string name="base_colour_blue">Синий</string>
     <string name="base_colour_green">Зелёный</string>
@@ -298,6 +297,6 @@
     <string name="settings_screensaver_keywords">заставка скринсейвер часы зарядка док-станция тумбочка выгорание</string>
     <string name="settings_screensaver_battery_full">Уведомление о полной зарядке</string>
     <string name="settings_screensaver_battery_full_desc">Уведомление, когда батарея заряжается полностью во время показа заставки. При включении запрашивается разрешение на отправку уведомлений.</string>
-    <string name="settings_screensaver_battery_full_denied">Уведомления для ARK-Launcher не разрешены, поэтому отправить их нельзя. Разрешите их в настройках уведомлений приложения.</string>
+    <string name="settings_screensaver_battery_full_denied">Уведомления для Movauncher не разрешены, поэтому отправить их нельзя. Разрешите их в настройках уведомлений приложения.</string>
     <string name="settings_permission_notifications">Отправка уведомлений</string>
 </resources>

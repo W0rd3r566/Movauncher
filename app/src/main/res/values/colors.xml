@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Neutral, not the base colour: the splash is drawn before any code can read the user's choice. -->
-    <color name="splash_background">#FAFAFA</color>
+    <!-- The splash uses Movauncher's dark icon background to keep the light monogram legible. -->
+    <color name="splash_background">#182320</color>
+    <color name="movauncher_icon_background">#182320</color>
 </resources>

@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Ayarlar</string>
     <string name="settings_set_default">Varsayılan başlatıcı yap</string>
-    <string name="settings_default_current">ARK-Launcher varsayılan başlatıcınız</string>
-    <string name="settings_default_tap">ARK-Launcher\'ı ana ekran uygulamanız yapmak için dokunun</string>
+    <string name="settings_default_current">Movauncher varsayılan başlatıcınız</string>
+    <string name="settings_default_tap">Movauncher\'ı ana ekran uygulamanız yapmak için dokunun</string>
     <string name="settings_gestures">Hareketler</string>
     <string name="settings_show_weather">Widget\'ta hava durumu</string>
     <string name="settings_weather_app">Hava durumuna dokunma şunu açar</string>
@@ -210,11 +210,8 @@
     <string name="settings_feedback_telegram_desc">Sürüm haberleri — t.me/ARKLauncherUpdates</string>
     <string name="settings_feedback_reddit">Reddit topluluğu</string>
     <string name="settings_feedback_reddit_desc">Gönderiler ve tartışma — r/ArkLauncher</string>
-    <string name="settings_support_title">ARK-Launcher\'ı destekle</string>
-    <string name="settings_support_text">ARK-Launcher ücretsiz ve açık kaynaklıdır ve öyle kalacak. Telefonunuzu daha hoş hale getiriyorsa bana bir kahve ısmarlayabilir veya çalışmayı destekleyebilirsiniz.</string>
-    <string name="settings_support_github">GitHub\'da sponsor ol</string>
-    <string name="settings_support_coffee">Bir kahve ısmarla</string>
-    <string name="settings_support_paypal">PayPal</string>
+    <string name="settings_source_code_title">Movauncher kaynak kodu</string>
+    <string name="settings_source_code_desc">GitHub · W0rd3r566/Movauncher</string>
     <string name="settings_step_decrease">Azalt</string>
     <string name="settings_step_increase">Artır</string>
     <string name="settings_widget_tonal">Yerleşik widget\'lar için temalı arka planlar</string>
@@ -244,7 +241,7 @@
     <string name="settings_cat_gestures_summary">Kaydırmalar, çift dokunma, uzun basma</string>
     <string name="settings_cat_bars_summary">Sistem çubuklarını gizleme, kendi durum çubuğu</string>
     <string name="settings_cat_notifications_summary">Simgelerde bildirim noktaları</string>
-    <string name="settings_cat_permissions_summary">ARK-Launcher\'ın kullanabildikleri</string>
+    <string name="settings_cat_permissions_summary">Movauncher\'ın kullanabildikleri</string>
     <string name="settings_cat_backup_summary">Düzeni ve ayarları kaydedin ve geri yükleyin</string>
     <string name="settings_cat_about_summary">Güncellemeler, geri bildirim kanalları, sürüm</string>
     <string name="settings_back">Geri</string>
@@ -290,6 +287,6 @@
     <string name="settings_screensaver_keywords">ekran koruyucu saat şarj dok komodin yanma</string>
     <string name="settings_screensaver_battery_full">Pil dolu bildirimi</string>
     <string name="settings_screensaver_battery_full_desc">Ekran koruyucu gösterilirken pil dolduğunda gelen bildirim. Açıldığında bildirim gönderme izni istenir.</string>
-    <string name="settings_screensaver_battery_full_denied">ARK-Launcher için bildirimlere izin verilmiyor, bu yüzden bildirim gönderilemiyor. Uygulamanın bildirim ayarlarından izin verin.</string>
+    <string name="settings_screensaver_battery_full_denied">Movauncher için bildirimlere izin verilmiyor, bu yüzden bildirim gönderilemiyor. Uygulamanın bildirim ayarlarından izin verin.</string>
     <string name="settings_permission_notifications">Bildirim gönderme</string>
 </resources>

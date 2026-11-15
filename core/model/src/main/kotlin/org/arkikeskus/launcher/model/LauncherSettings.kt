@@ -47,7 +47,7 @@ data class LauncherSettings(
      *  their own text and keep their own fonts. */
     val fontFamily: String = FONT_DEFAULT,
     /** The colour the whole launcher is coloured from (Settings > Appearance): one of [BASE_COLOURS].
-     *  Eight hues, [BASE_COLOUR_BLACK] for a look without colour, and [BASE_COLOUR_CHAMELEON], which
+     *  Ten hues, [BASE_COLOUR_BLACK] for a look without colour, and [BASE_COLOUR_CHAMELEON], which
      *  follows the wallpaper. */
     val baseColour: String = BASE_COLOUR_DEFAULT,
     /** The wallpaper colour (ARGB) the Chameleon last followed, so the first frame after a start is
@@ -238,6 +238,8 @@ data class LauncherSettings(
         val FONTS = listOf(FONT_DEFAULT, FONT_CONDENSED, FONT_SERIF, FONT_MONOSPACE, FONT_CASUAL, FONT_CURSIVE)
 
         /** [baseColour] choices, in the order the Appearance page shows them. */
+        const val BASE_COLOUR_GRAPHITE = "graphite"
+        const val BASE_COLOUR_MINT = "mint"
         const val BASE_COLOUR_ORANGE = "orange"
         const val BASE_COLOUR_BLUE = "blue"
         const val BASE_COLOUR_GREEN = "green"
@@ -248,9 +250,9 @@ data class LauncherSettings(
         const val BASE_COLOUR_RED = "red"
         const val BASE_COLOUR_BLACK = "black"
         const val BASE_COLOUR_CHAMELEON = "chameleon"
-        const val BASE_COLOUR_DEFAULT = BASE_COLOUR_ORANGE
+        const val BASE_COLOUR_DEFAULT = BASE_COLOUR_GRAPHITE
         val BASE_COLOURS = listOf(
-            BASE_COLOUR_ORANGE, BASE_COLOUR_BLUE, BASE_COLOUR_GREEN, BASE_COLOUR_VIOLET, BASE_COLOUR_ROSE,
+            BASE_COLOUR_GRAPHITE, BASE_COLOUR_MINT, BASE_COLOUR_ORANGE, BASE_COLOUR_BLUE, BASE_COLOUR_GREEN, BASE_COLOUR_VIOLET, BASE_COLOUR_ROSE,
             BASE_COLOUR_TEAL, BASE_COLOUR_YELLOW, BASE_COLOUR_RED, BASE_COLOUR_BLACK, BASE_COLOUR_CHAMELEON,
         )
 

@@ -105,7 +105,7 @@ class SettingsSearchJumpTest {
 
     @Test fun aRowOfTheMainPageIsShownOnTheMainPage() {
         show()
-        openFromSearch(res.getString(R.string.settings_support_paypal), "E1")
+        openFromSearch(res.getString(R.string.settings_source_code_title), "E1")
         compose.onNodeWithTag(settingTag("E1")).assertIsDisplayed().assertIsFocused()
         letTheMarkFade()
         // The search was cleared to show it, so the categories are back.

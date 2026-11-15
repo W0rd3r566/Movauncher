@@ -59,6 +59,8 @@ internal fun baseColourTag(key: String): String = "base-colour-$key"
 /** The name of a stored base colour, on the Appearance page and in the category's summary on the main page. */
 @StringRes
 internal fun baseColourName(key: String): Int = when (key) {
+    LauncherSettings.BASE_COLOUR_GRAPHITE -> R.string.base_colour_graphite
+    LauncherSettings.BASE_COLOUR_MINT -> R.string.base_colour_mint
     LauncherSettings.BASE_COLOUR_BLUE -> R.string.base_colour_blue
     LauncherSettings.BASE_COLOUR_GREEN -> R.string.base_colour_green
     LauncherSettings.BASE_COLOUR_VIOLET -> R.string.base_colour_violet
@@ -259,6 +261,7 @@ private fun BaseColourSwatch(key: String, selected: Boolean, dark: Boolean) {
  */
 private fun swatchBrush(key: String, dark: Boolean): Brush = when (key) {
     LauncherSettings.BASE_COLOUR_BLACK -> SolidColor(basePalette(PaletteSeed.Mono, dark = false).fill)
+    LauncherSettings.BASE_COLOUR_GRAPHITE -> SolidColor(basePalette(PaletteSeed.Graphite, dark).fill)
     LauncherSettings.BASE_COLOUR_CHAMELEON -> Brush.sweepGradient(
         (CHAMELEON_HUES + CHAMELEON_HUES.first()).map { basePalette(PaletteSeed.Hue(it), dark).fill },
     )

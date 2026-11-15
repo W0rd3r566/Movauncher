@@ -286,8 +286,8 @@ class SettingsSearchUiTest {
     @Test fun whatIsSearchedIsTheTextOfTheCurrentLanguage() {
         val dock = searchableSettings(res, sdkInt = 35).first { it.id == "D1" }
         assertThat(dock.title).isEqualTo(res.getString(R.string.settings_dock_show))
-        val support = searchableSettings(res, sdkInt = 35).first { it.id == "E1" }
-        assertThat(support.keywords).contains(res.getString(R.string.settings_support_paypal))
-        assertThat(support.description).isEqualTo(res.getString(R.string.settings_support_text))
+        val source = searchableSettings(res, sdkInt = 35).first { it.id == "E1" }
+        assertThat(source.title).isEqualTo(res.getString(R.string.settings_source_code_title))
+        assertThat(source.description).isEqualTo(res.getString(R.string.settings_source_code_desc))
     }
 }

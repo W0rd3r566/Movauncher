@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import org.arkikeskus.launcher.ui.expressive.ExpressiveActionRow
 
-internal const val DISCUSSIONS_URL = "https://github.com/jrs8205/ARK-launcher/discussions"
+internal const val DISCUSSIONS_URL = "https://github.com/W0rd3r566/Movauncher/issues"
 internal const val TELEGRAM_URL = "https://t.me/ARKLauncherUpdates"
 internal const val REDDIT_URL = "https://www.reddit.com/r/ArkLauncher/"
 

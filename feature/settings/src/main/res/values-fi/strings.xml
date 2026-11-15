@@ -2,8 +2,8 @@
 <resources>
     <string name="settings_title">Asetukset</string>
     <string name="settings_set_default">Aseta oletuslauncheriksi</string>
-    <string name="settings_default_current">ARK-Launcher on oletuslauncherisi</string>
-    <string name="settings_default_tap">Napauta asettaaksesi ARK-Launcherin oletukseksi</string>
+    <string name="settings_default_current">Movauncher on oletuslauncherisi</string>
+    <string name="settings_default_tap">Napauta asettaaksesi Movauncherin oletukseksi</string>
     <string name="settings_gestures">Eleet</string>
     <string name="settings_show_weather">Sää widgetissä</string>
     <string name="settings_weather_app">Sään napautus avaa</string>
@@ -210,11 +210,8 @@
     <string name="settings_feedback_telegram_desc">Julkaisu-uutiset — t.me/ARKLauncherUpdates</string>
     <string name="settings_feedback_reddit">Reddit-yhteisö</string>
     <string name="settings_feedback_reddit_desc">Julkaisut ja keskustelu — r/ArkLauncher</string>
-    <string name="settings_support_title">Tue ARK-Launcheria</string>
-    <string name="settings_support_text">ARK-Launcher on ilmainen ja avointa lähdekoodia, ja pysyy sellaisena. Jos se tekee puhelimestasi mukavamman, voit tarjota minulle kahvin tai sponsoroida työtä.</string>
-    <string name="settings_support_github">Sponsoroi GitHubissa</string>
-    <string name="settings_support_coffee">Tarjoa kahvi</string>
-    <string name="settings_support_paypal">PayPal</string>
+    <string name="settings_source_code_title">Movauncherin lähdekoodi</string>
+    <string name="settings_source_code_desc">GitHub · W0rd3r566/Movauncher</string>
     <string name="settings_step_decrease">Vähennä</string>
     <string name="settings_step_increase">Lisää</string>
     <string name="settings_widget_tonal">Widgettien teematausta</string>
@@ -244,7 +241,7 @@
     <string name="settings_cat_gestures_summary">Pyyhkäisyt, tuplanapautus, pitkä painallus</string>
     <string name="settings_cat_bars_summary">Järjestelmän palkkien piilotus, oma tilapalkki</string>
     <string name="settings_cat_notifications_summary">Ilmoituspisteet kuvakkeissa</string>
-    <string name="settings_cat_permissions_summary">Mitä ARK-Launcher saa käyttää</string>
+    <string name="settings_cat_permissions_summary">Mitä Movauncher saa käyttää</string>
     <string name="settings_cat_backup_summary">Tallenna ja palauta asettelu ja asetukset</string>
     <string name="settings_cat_about_summary">Päivitykset, palautekanavat, versio</string>
     <string name="settings_back">Takaisin</string>
@@ -290,6 +287,6 @@
     <string name="settings_screensaver_keywords">näytönsäästäjä kello lataus telakka yöpöytä kiinnipalaminen</string>
     <string name="settings_screensaver_battery_full">Akku täynnä -ilmoitus</string>
     <string name="settings_screensaver_battery_full_desc">Ilmoitus, kun akku tulee täyteen näytönsäästäjän ollessa näkyvissä. Päälle kääntäminen kysyy luvan lähettää ilmoituksia.</string>
-    <string name="settings_screensaver_battery_full_denied">ARK-Launcherin ilmoituksia ei ole sallittu, joten niitä ei voi lähettää. Salli ne sovelluksen ilmoitusasetuksista.</string>
+    <string name="settings_screensaver_battery_full_denied">Movauncherin ilmoituksia ei ole sallittu, joten niitä ei voi lähettää. Salli ne sovelluksen ilmoitusasetuksista.</string>
     <string name="settings_permission_notifications">Ilmoitusten lähettäminen</string>
 </resources>

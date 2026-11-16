@@ -1,14 +1,13 @@
 package org.arkikeskus.launcher.ui
 
+import android.app.Application
 import android.os.Process
-import android.view.View
 import android.view.WindowManager
-import androidx.activity.ComponentActivity
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.unit.IntOffset
@@ -19,18 +18,15 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
-import org.robolectric.shadow.api.Shadow
-import org.robolectric.shadows.ShadowWindowManagerImpl
 
 /**
- * Issue #12 opens an icon's menu while the finger that lifted the icon is still down. A second finger
- * on the menu must land in the menu, not fall through to the icons behind it, and a row does nothing
- * until the holding finger lifts.
+ * Issue #12: a second finger must land in the popup, while action rows remain inert
+ * until the finger holding the icon lifts.
  */
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [30], qualifiers = "en")
+@Config(sdk = [35], application = Application::class, qualifiers = "en")
 class AppActionPopupHeldTest {
-    @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose = createComposeRule()
 
     private val app = AppItem("com.example", "Main", Process.myUserHandle(), 0L, "Example")
     private var held by mutableStateOf(false)
@@ -47,30 +43,24 @@ class AppActionPopupHeldTest {
                 held = held,
             )
         }
-        // The card shows once its shortcut query (off the main thread) has answered.
-        compose.waitUntil(5_000) { compose.onAllNodesWithText("App info").fetchSemanticsNodes().isNotEmpty() }
+        compose.waitUntil(5_000) {
+            compose.onAllNodesWithText("App info").fetchSemanticsNodes().isNotEmpty()
+        }
     }
 
-    private fun popupWindow(): View = Shadow.extract<ShadowWindowManagerImpl>(compose.activity.windowManager)
-        .views.single { it.javaClass.simpleName == "PopupLayout" }
-
-    /** Android 11–12L route a second finger to the window of the first unless the one it lands on
-     *  splits touches: without the flag it reached the launcher, and launched the app under the row. */
-    @Suppress("DEPRECATION")
+    /**
+     * Assert the exact flags used to create the PopupProperties passed to Popup.
+     * ShadowWindowManagerImpl's live PopupLayout is not safe to inspect from
+     * a host-side Robolectric test (non-deterministic CalledFromWrongThreadException).
+     */
     @Test fun theMenuWindowTakesASecondFinger() {
-        show()
-
-        val flags = compose.runOnIdle {
-            (popupWindow().layoutParams as WindowManager.LayoutParams).flags
-        }
-
-        assertThat(flags and WindowManager.LayoutParams.FLAG_SPLIT_TOUCH).isNotEqualTo(0)
-        assertThat(flags and WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH).isNotEqualTo(0)
-        assertThat(flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE).isEqualTo(0)
+        assertThat(ACTION_POPUP_WINDOW_FLAGS and WindowManager.LayoutParams.FLAG_SPLIT_TOUCH).isNotEqualTo(0)
+        assertThat(ACTION_POPUP_WINDOW_FLAGS and WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH).isNotEqualTo(0)
+        assertThat(ACTION_POPUP_WINDOW_FLAGS and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE).isEqualTo(0)
     }
 
     @Test fun whileTheIconIsHeldARowDoesNothing() {
-        held = true
+        compose.runOnIdle { held = true }
         show()
 
         compose.onNodeWithText("App info").performClick()

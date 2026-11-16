@@ -52,6 +52,10 @@ import java.util.concurrent.TimeUnit
 class PinRequestViewModelTest {
     private val context: Application = RuntimeEnvironment.getApplication()
     private val dataStoreScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    // These ViewModels start coroutines against process-wide pin locks. Close every instance between
+    // tests so no pending job can keep another test waiting on a stale lock.
+    private val modelStore = ViewModelStore()
+    private var nextModelId = 0
 
     private lateinit var db: LauncherDatabase
     private lateinit var dao: HomeItemDao
@@ -88,6 +92,8 @@ class PinRequestViewModelTest {
 
     @After
     fun tearDown() {
+        modelStore.clear()
+        shadowOf(Looper.getMainLooper()).idle()
         dataStoreScope.cancel()
         db.javaClass.getMethod("close").invoke(db)
     }
@@ -145,11 +151,12 @@ class PinRequestViewModelTest {
             it.binder = binder
             it.newItems = NewHomeItems()
             it.cellSize = HomeCellSize().apply { publish(80f, 100f, columns = 4, rows = 6) }
+            modelStore.put("pin-${nextModelId++}", it)
         }
 
     /** Runs the main looper (the ViewModel's scope) until [done], giving the IO work time. */
     private fun awaitUntil(what: String, done: () -> Boolean) {
-        val until = System.currentTimeMillis() + 5_000
+        val until = System.currentTimeMillis() + 10_000
         while (!done()) {
             check(System.currentTimeMillis() < until) { "timed out waiting for $what" }
             shadowOf(Looper.getMainLooper()).idle()

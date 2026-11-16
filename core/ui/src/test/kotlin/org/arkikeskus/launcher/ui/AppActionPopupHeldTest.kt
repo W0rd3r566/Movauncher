@@ -60,7 +60,7 @@ class AppActionPopupHeldTest {
     }
 
     @Test fun whileTheIconIsHeldARowDoesNothing() {
-        compose.runOnIdle { held = true }
+        held = true // Set before composition; changes after show() run on the Compose UI thread.
         show()
 
         compose.onNodeWithText("App info").performClick()

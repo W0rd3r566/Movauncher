@@ -80,6 +80,9 @@ data class IconMenuItem(@DrawableRes val icon: Int, val label: String, val onCli
 
 private const val POPUP_MARGIN_PX = 24
 
+/** Window flags are shared by every app-action popup and verified without a flaky Robolectric window. */
+internal const val ACTION_POPUP_WINDOW_FLAGS = FLAG_WATCH_OUTSIDE_TOUCH or FLAG_SPLIT_TOUCH
+
 /** The most the card waits for its shortcut and Widgets rows before showing with what has arrived. */
 internal const val POPUP_ROWS_WAIT_MS = 400L
 private val CARD_WIDTH = 232.dp
@@ -266,7 +269,7 @@ private fun AnchoredPopupWindow(
         popupPositionProvider = positionProvider,
         onDismissRequest = onDismiss,
         // = PopupProperties(focusable = true), plus split touch.
-        properties = PopupProperties(flags = FLAG_WATCH_OUTSIDE_TOUCH or FLAG_SPLIT_TOUCH),
+        properties = PopupProperties(flags = ACTION_POPUP_WINDOW_FLAGS),
     ) {
         if (palette != null) {
             CompositionLocalProvider(LocalExpressivePalette provides palette) { body(windowWidthPx) }

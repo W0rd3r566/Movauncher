@@ -20,9 +20,9 @@ import androidx.compose.ui.platform.LocalContext
  */
 
 /** How small a pressed thing gets. */
-const val PRESSED_SCALE = 0.96f
+const val PRESSED_SCALE = 0.986f
 
-private val PressSpec = spring<Float>(dampingRatio = 0.6f, stiffness = 800f)
+private val PressSpec = spring<Float>(dampingRatio = 0.84f, stiffness = 570f)
 
 /** Whether the phone's animations are on: the system's animator duration scale is not 0. Read once per screen. */
 @Composable

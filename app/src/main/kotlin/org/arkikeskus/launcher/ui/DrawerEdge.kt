@@ -3,10 +3,10 @@ package org.arkikeskus.launcher.ui
 import androidx.compose.ui.unit.dp
 
 /** Top-corner radius of the drawer while it moves: the corner size of Material 3 sheets. */
-internal val DRAWER_CORNER_RADIUS = 28.dp
+internal val DRAWER_CORNER_RADIUS = 22.dp
 
 /** Shadow the drawer's top edge casts on home while it moves. */
-internal val DRAWER_EDGE_ELEVATION = 8.dp
+internal val DRAWER_EDGE_ELEVATION = 4.dp
 
 /** How dark home gets behind a fully open drawer (Material 3 scrim strength). */
 internal const val DRAWER_SCRIM_MAX_ALPHA = 0.32f

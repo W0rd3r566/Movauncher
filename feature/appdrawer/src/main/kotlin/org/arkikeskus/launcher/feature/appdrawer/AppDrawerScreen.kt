@@ -138,7 +138,6 @@ import org.arkikeskus.launcher.ui.expressive.ExpressiveSectionTitle
 import org.arkikeskus.launcher.ui.expressive.ExpressiveTheme
 import org.arkikeskus.launcher.ui.expressive.LocalExpressivePalette
 import org.arkikeskus.launcher.ui.rememberHomeDragController
-import org.arkikeskus.launcher.ui.expressive.PillShape
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -618,7 +617,7 @@ private fun AppDrawerContent(
             DragHandle()
             if (showSearch) {
                 val searchPalette = LocalExpressivePalette.current
-                // A pill in the container colour with what is read on a container; no underline.
+                // A quiet opaque search surface: readable over both plain and photo-backed drawers.
                 TextField(
                     value = query,
                     onValueChange = onQueryChange,
@@ -630,24 +629,23 @@ private fun AppDrawerContent(
                                 Icon(
                                     painter = painterResource(LauncherIcons.Close),
                                     contentDescription = stringResource(R.string.search_clear),
-                                    tint = searchPalette.onContainer,
+                                    tint = searchPalette.dim,
                                 )
                             }
                         }
                     },
-                    shape = PillShape,
+                    shape = RoundedCornerShape(18.dp),
                     colors = TextFieldDefaults.colors(
-                        focusedContainerColor = searchPalette.container,
-                        unfocusedContainerColor = searchPalette.container,
+                        focusedContainerColor = searchPalette.surfaceHi,
+                        unfocusedContainerColor = searchPalette.surfaceHi,
                         focusedIndicatorColor = Color.Transparent,
                         unfocusedIndicatorColor = Color.Transparent,
-                        cursorColor = searchPalette.onContainer,
-                        focusedTextColor = searchPalette.onContainer,
-                        unfocusedTextColor = searchPalette.onContainer,
-                        // The hint follows the pill's own palette, not the drawer's text (a yellow pill on a
-                        // see-through drawer over a dark wallpaper keeps dark text while the labels are white).
-                        focusedPlaceholderColor = searchPalette.onContainer,
-                        unfocusedPlaceholderColor = searchPalette.onContainer,
+                        cursorColor = searchPalette.accent,
+                        focusedTextColor = searchPalette.text,
+                        unfocusedTextColor = searchPalette.text,
+                        // The hint is subdued on the search surface, including photo-backed drawers.
+                        focusedPlaceholderColor = searchPalette.dim,
+                        unfocusedPlaceholderColor = searchPalette.dim,
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
@@ -1226,8 +1224,8 @@ internal fun FrequentAppsCard(
     val p = LocalExpressivePalette.current
     Surface(
         color = p.surfaceHi,
-        shape = RoundedCornerShape(20.dp),
-        shadowElevation = p.shadow,
+        shape = RoundedCornerShape(16.dp),
+        shadowElevation = 0.dp,
         modifier = Modifier
             .fillMaxWidth()
             .padding(bottom = 10.dp),
@@ -1236,7 +1234,7 @@ internal fun FrequentAppsCard(
             Text(
                 text = stringResource(R.string.drawer_frequent_apps),
                 color = p.dim,
-                fontSize = 13.sp,
+                fontSize = 12.sp,
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier.padding(start = 8.dp, bottom = 4.dp),
             )

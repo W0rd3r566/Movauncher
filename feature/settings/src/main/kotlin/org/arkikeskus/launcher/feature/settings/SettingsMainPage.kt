@@ -30,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.testTag
@@ -51,6 +52,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.runtime.remember
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.geometry.Offset
 import org.arkikeskus.launcher.ui.expressive.rememberPressScale
 
 /**
@@ -85,9 +87,9 @@ internal fun SettingsMainPage(
         Text(
             text = stringResource(R.string.settings_title),
             color = p.text,
-            fontSize = 31.sp,
-            fontWeight = FontWeight.ExtraBold,
-            letterSpacing = (-0.3).sp,
+            fontSize = 30.sp,
+            fontWeight = FontWeight.SemiBold,
+            letterSpacing = (-0.7).sp,
             modifier = Modifier.padding(start = 6.dp, top = 10.dp, bottom = 6.dp),
         )
 
@@ -145,7 +147,7 @@ private fun SearchBack(query: String, onClear: () -> Unit) {
 }
 
 /**
- * One category on the main page, a row of the category list: its icon on a chip of the fill, its name, a line
+ * One category on the main page, a flat list row with a quiet icon chip, its name, a line
  * saying what is on its page, and a chevron. The whole row is one button, at least 48 dp high, read as
  * "name, summary". Outside a group it is a card on its own.
  */
@@ -174,34 +176,46 @@ internal fun CategoryRow(
                         .clip(groupShape(GroupPosition.Only))
                 },
             )
-            .background(p.surfaceHi)
+            // List rows sit directly on the page, without raised cards. The fine rule provides structure.
+            .background(p.bg)
+            .drawWithContent {
+                drawContent()
+                val inset = 14.dp.toPx()
+                val lineY = size.height - 0.5.dp.toPx()
+                drawLine(
+                    color = p.faint.copy(alpha = 0.22f),
+                    start = Offset(inset, lineY),
+                    end = Offset(size.width - inset, lineY),
+                    strokeWidth = 0.75.dp.toPx(),
+                )
+            }
             .clickable(interactionSource = interaction, indication = LocalIndication.current, role = Role.Button, onClick = onClick)
             .heightIn(min = 56.dp)
-            .padding(horizontal = 14.dp, vertical = 10.dp),
+            .padding(horizontal = 14.dp, vertical = 9.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(
             modifier = Modifier
-                .size(40.dp)
-                .background(p.fill, RoundedCornerShape(12.dp)),
+                .size(36.dp)
+                .background(p.container, RoundedCornerShape(11.dp)),
             contentAlignment = Alignment.Center,
         ) {
             Icon(
                 painter = painterResource(category.icon),
                 contentDescription = null,
-                tint = p.onFill,
-                modifier = Modifier.size(22.dp),
+                tint = p.onContainer,
+                modifier = Modifier.size(20.dp),
             )
         }
-        Column(modifier = Modifier.weight(1f).padding(horizontal = 14.dp)) {
-            Text(stringResource(category.title), color = p.text, fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
-            Text(summary, color = p.dim, fontSize = 12.5.sp)
+        Column(modifier = Modifier.weight(1f).padding(horizontal = 12.dp)) {
+            Text(stringResource(category.title), color = p.text, fontSize = 15.sp, fontWeight = FontWeight.Medium)
+            Text(summary, color = p.dim, fontSize = 12.sp)
         }
         Icon(
             painter = painterResource(LauncherIcons.ChevronRight),
             contentDescription = null,
             tint = p.faint,
-            modifier = Modifier.size(22.dp),
+            modifier = Modifier.size(18.dp),
         )
     }
 }

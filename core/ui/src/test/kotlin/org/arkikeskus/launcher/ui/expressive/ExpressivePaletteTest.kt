@@ -42,7 +42,7 @@ class ExpressivePaletteTest {
             assertThat(p.container).isEqualTo(base.container)
             assertThat(p.onContainer).isEqualTo(base.onContainer)
             assertThat(p.accent).isEqualTo(base.accentText)
-            assertThat(p.shadow).isEqualTo(if (dark) 0.dp else 1.dp)
+            assertThat(p.shadow).isEqualTo(0.dp)
         }
     }
 

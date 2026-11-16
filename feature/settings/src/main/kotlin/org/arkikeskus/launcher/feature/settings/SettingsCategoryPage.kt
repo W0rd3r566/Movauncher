@@ -139,8 +139,8 @@ internal fun SettingsPageHeader(title: String, onBack: () -> Unit) {
         Text(
             text = title,
             color = p.text,
-            fontSize = 23.sp,
-            fontWeight = FontWeight.ExtraBold,
+            fontSize = 22.sp,
+            fontWeight = FontWeight.SemiBold,
             letterSpacing = (-0.2).sp,
             modifier = Modifier.weight(1f).padding(start = 4.dp).semantics { heading() },
         )
@@ -153,11 +153,11 @@ internal fun PageHeading(text: String, first: Boolean = false) {
     Text(
         text = text,
         color = LocalExpressivePalette.current.text,
-        fontSize = 20.sp,
-        fontWeight = FontWeight.Bold,
+        fontSize = 17.sp,
+        fontWeight = FontWeight.SemiBold,
         letterSpacing = (-0.2).sp,
         modifier = Modifier
-            .padding(top = if (first) 8.dp else 26.dp, start = 4.dp, bottom = 12.dp)
+            .padding(top = if (first) 8.dp else 22.dp, start = 4.dp, bottom = 10.dp)
             .semantics { heading() },
     )
 }

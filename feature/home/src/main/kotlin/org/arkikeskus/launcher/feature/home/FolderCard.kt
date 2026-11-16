@@ -2,6 +2,7 @@ package org.arkikeskus.launcher.feature.home
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -108,6 +109,7 @@ import org.arkikeskus.launcher.ui.component.iconSizeForCell
 import org.arkikeskus.launcher.ui.component.labelBlockHeight
 import org.arkikeskus.launcher.ui.component.labelFontFactor
 import org.arkikeskus.launcher.ui.DimSystemBars
+import org.arkikeskus.launcher.ui.expressive.systemAnimationsOn
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
@@ -198,6 +200,16 @@ internal fun FolderCard(
     val iconScale = LocalIconScale.current
     val labelScale = LocalAppLabelScale.current
     val windowHeightPx = LocalWindowInfo.current.containerSize.height
+    // Reveal the folder without an exaggerated bounce; honour Android's reduced-motion setting.
+    val motionEnabled = systemAnimationsOn()
+    val openProgress = remember(folder.id) { Animatable(if (motionEnabled) 0f else 1f) }
+    LaunchedEffect(folder.id, motionEnabled) {
+        if (motionEnabled) {
+            openProgress.animateTo(1f, tween(durationMillis = 210, easing = FastOutSlowInEasing))
+        } else {
+            openProgress.snapTo(1f)
+        }
+    }
 
     val currentOnAppClick by rememberUpdatedState(onAppClick)
     val currentOnDismiss by rememberUpdatedState(onDismiss)
@@ -253,13 +265,13 @@ internal fun FolderCard(
 
     BackHandler(onBack = onDismiss)
     // The scrim below covers the whole of home, behind the system bars too: the bars' glyph colour counts it.
-    DimSystemBars { FOLDER_SCRIM_ALPHA * dragOutAlpha.value }
+    DimSystemBars { FOLDER_SCRIM_ALPHA * dragOutAlpha.value * openProgress.value }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
             .testTag("folderScrim")
-            .graphicsLayer { alpha = dragOutAlpha.value }
+            .graphicsLayer { alpha = dragOutAlpha.value * openProgress.value }
             .background(Color.Black.copy(alpha = FOLDER_SCRIM_ALPHA))
             // The scrim swallows every touch under it: nothing reaches the home grid behind. For
             // accessibility services it is a pane named after the folder (announced as it opens,
@@ -278,7 +290,7 @@ internal fun FolderCard(
         val behindCard = LocalHomeBackdrop.current.colorBehind(cardBounds.takeIf { it != Rect.Zero }?.center?.y)
         val cardColors = folderCardColors(style, MaterialTheme.colorScheme.surface, themeText, behindCard)
         Surface(
-            shape = RoundedCornerShape(28.dp),
+            shape = RoundedCornerShape(20.dp),
             color = cardColors.container,
             contentColor = cardColors.content,
             modifier = Modifier
@@ -286,6 +298,11 @@ internal fun FolderCard(
                 .widthIn(max = 360.dp)
                 .fillMaxWidth()
                 .testTag("folderCard")
+                .graphicsLayer {
+                    val scale = 0.955f + 0.045f * openProgress.value
+                    scaleX = scale
+                    scaleY = scale
+                }
                 // A tap in the card's own padding closes nothing (and the consumed release keeps
                 // the scrim's tap from firing for a press that began inside the card).
                 .pointerInput(Unit) { detectTapGestures { } }

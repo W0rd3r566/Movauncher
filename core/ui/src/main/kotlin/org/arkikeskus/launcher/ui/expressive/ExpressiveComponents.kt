@@ -31,9 +31,9 @@ import androidx.compose.ui.graphics.Color
 @Composable
 fun ExpressiveSectionTitle(text: String, color: Color = LocalExpressivePalette.current.text) {
     Text(
-        text = text, color = color, fontSize = 20.sp, fontWeight = FontWeight.Bold,
+        text = text, color = color, fontSize = 17.sp, fontWeight = FontWeight.SemiBold,
         letterSpacing = (-0.2).sp,
-        modifier = Modifier.padding(top = 26.dp, start = 4.dp, bottom = 12.dp),
+        modifier = Modifier.padding(top = 22.dp, start = 4.dp, bottom = 10.dp),
     )
 }
 
@@ -54,7 +54,7 @@ fun ExpressiveCard(
             .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier),
     ) {
         Row(
-            modifier = Modifier.padding(horizontal = 20.dp, vertical = 16.dp),
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 13.dp),
             verticalAlignment = Alignment.CenterVertically,
             content = content,
         )
@@ -73,14 +73,14 @@ fun ExpressiveActionRow(
     val p = LocalExpressivePalette.current
     ExpressiveCard(onClick = onClick) {
         Column(modifier = Modifier.weight(1f)) {
-            Text(label, color = p.accent, fontSize = 16.sp, fontWeight = FontWeight.Medium)
-            Text(description, color = p.dim, fontSize = 12.5.sp)
+            Text(label, color = p.text, fontSize = 15.sp, fontWeight = FontWeight.Medium)
+            Text(description, color = p.dim, fontSize = 12.sp)
         }
         Icon(
             painter = painterResource(trailingIcon),
             contentDescription = null,
             tint = if (trailingIcon == LauncherIcons.Add) p.accent else p.faint,
-            modifier = Modifier.size(22.dp),
+            modifier = Modifier.size(19.dp),
         )
     }
 }

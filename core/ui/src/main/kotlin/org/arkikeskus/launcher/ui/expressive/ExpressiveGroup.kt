@@ -38,10 +38,10 @@ fun groupPosition(index: Int, count: Int): GroupPosition = when {
 }
 
 /** A group's outer corners, and a card's on its own. */
-private val OUTER_CORNER = 24.dp
+private val OUTER_CORNER = 18.dp
 
 /** The corners between the rows of a group. */
-private val INNER_CORNER = 6.dp
+private val INNER_CORNER = 5.dp
 
 /** The room between two rows of a group. */
 private val ROW_GAP = 2.dp

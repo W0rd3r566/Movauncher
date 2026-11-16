@@ -138,7 +138,7 @@ fun Dock(
         nominalIconSize
     }
 
-    val shape = RoundedCornerShape(30.dp)
+    val shape = RoundedCornerShape(22.dp)
     // Live drop feedback: the bar lights up while an item from another surface hovers it and has
     // somewhere to land (Launcher3's onDragEnter/acceptDrop); the tile a drop would fold into or
     // join lights up on its own. derivedStateOf so we recompose only when these change, not per frame.
